@@ -38,24 +38,24 @@ public class GameServlet extends HttpServlet {
                     switch(game.getWinner()){
                         case NOBODY:
                             break;
-                        case COMPUTER:
-                            request.setAttribute("winner", "The computer");
+                        case COMPUTADOR:
+                            request.setAttribute("winner", "EL COMPUTADOR");
                             break;
-                        case USER:
-                            request.setAttribute("winner", "You");
+                        case USUARIO:
+                            request.setAttribute("winner", "USUARIO");
                             break;
                     }
                 }
                 break;
-            case COMPUTER:
-                request.setAttribute("winner", "The computer");
+            case COMPUTADOR:
+                request.setAttribute("winner", "EL COMPUTADOR");
                 break;
-            case USER:
-                request.setAttribute("winner", "You");
+            case USUARIO:
+                request.setAttribute("winner", "USUARIO");
                 break;
         }
         if(winner == GamePlayer.NOBODY && !game.hasEmptyCell()){
-            request.setAttribute("winner", "Nobody");
+            request.setAttribute("winner", "NADIE");
         }
         request.getRequestDispatcher("/game.jsp").forward(request, response);
     }

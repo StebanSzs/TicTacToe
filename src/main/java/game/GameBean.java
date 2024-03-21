@@ -12,8 +12,8 @@ public class GameBean {
         NULL, O, X;
     }
     public enum GamePlayer{
-        USER(GameState.X),
-        COMPUTER(GameState.O),
+        USUARIO(GameState.X),
+        COMPUTADOR(GameState.O),
         NOBODY(GameState.NULL);
         
         private GameState state;
@@ -59,17 +59,17 @@ public class GameBean {
             }
         }
         if(!this.userFirst){
-            this.play(GamePlayer.COMPUTER, 1, 1);
+            this.play(GamePlayer.COMPUTADOR, 1, 1);
         }
     }
     
     public void playPlayerTurn(int line, int col){
-        this.play(GamePlayer.USER, line, col);
+        this.play(GamePlayer.USUARIO, line, col);
     }
     public void playComputerTurn(){
         int line = this.getRandomLineIndexWithEmptyCell();
         int col = this.getRandomEmptyCell(line);
-        this.play(GamePlayer.COMPUTER, line, col);
+        this.play(GamePlayer.COMPUTADOR, line, col);
     }
     private void play(GamePlayer player, int line, int col){
         if(this.gameStatus[line][col] == GameState.NULL){

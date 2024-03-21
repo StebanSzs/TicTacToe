@@ -20,7 +20,7 @@ public class EntryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("User");
+        String user = request.getParameter("USUARIO");
         boolean userFirst = user != null;
         
         GameBean game = (GameBean) request.getSession(true).getAttribute("gameBean");
